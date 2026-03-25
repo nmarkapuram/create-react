@@ -1,0 +1,37 @@
+Planning
+
+Webpage
+---------------
+header -> Logo (left) Links (Right) Cart (end)
+
+Body -> 
+    Search bar
+    Restro cards -> Pic, Name, cuisines, rating, time to deliver
+
+Footer -> links, copyright
+
+
+Low level Components
+=====================
+
+appLayout Component
+
+    header -> 
+        Logo component
+        Nav component
+
+    Body ->
+        Search
+        RestaurantContainer
+        RestaurantCard
+            -> Pic
+            -> Name
+            -> cuisines
+            -> rating
+            -> Delivery Time
+
+    Footer ->
+        Copyright
+        Links
+        Address
+        Contact

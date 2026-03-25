@@ -57,3 +57,45 @@ Keep element inside a component
 
 JSX will sanitise the data and avoids XSS injects
 {data} from an api will be sanitised
+
+Passing a prop to Component is same as passing argument to function
+We can pass any number of props. It will be passed as props 
+
+
+for map function
+-> need map function pass key (keyword) with unique id.
+Obj.map(Restaurant) => {
+    <RestaurantCard key={Restro.id} resData={Restaurant}/>
+}
+-> Never take index as keys
+
+Export/IMpory
+
+Default Export/Import
+export default component/variable;
+import component from "";
+
+
+Named Import/Export -> Need to use curly brances whiile importing
+export const component = {}
+import {component} from ""
+
+
+React Hooks
+===========
+ -> A Normal JS Function with super powers -> to propagate state change.
+Hooks
+UseState() -> Super powerful state variable
+UseEffect()
+
+Whenever state variable chnages, react is re-rendering the component
+
+
+Virtual dom
+===========
+Reconciliation Algorithm -> React Fiber
+React creates Virtual DOM (representation of actual dom) in a JS Object. 
+
+
+If data filtered to result in lesser number of cards, 
+

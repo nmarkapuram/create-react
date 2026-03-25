@@ -8,6 +8,10 @@ import ReactDOM from 'react-dom/client';
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(jsxHeading);
 
+const title = () => {
+    return ( <h3>Namaste from React Title</h3>);
+}
+
 
 // React Functional Component
 const HeadingComponent = function() {
@@ -18,8 +22,11 @@ const HeadingComponent = function() {
 
 const HeadingComponent2 = () => (
     <div className="container">
-        <h1 id="heading" className="header">Hello React from js 2</h1>
+        {HeadingComponent()}
         <HeadingComponent />
+        <HeadingComponent> {title()}</HeadingComponent>
+        <h1 id="heading" className="header">Hello React from js 2</h1>
+        {HeadingComponent()}
     </div>
 );
 const root = ReactDOM.createRoot(document.getElementById('root'));

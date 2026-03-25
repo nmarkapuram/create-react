@@ -46,3 +46,14 @@ React Components
         Function returns a react element 
 Component Composition
     Keeping multipke Components inside a single functional component
+
+Keep element inside a component
+    You can write JS inside html with curly braces inside HTML {}
+    You can pull variables inside {}
+    Ex:- number =10000
+    <h2>{number}</h2>
+    We can write mathemetical calculations as well 
+    <h2>{100+200}</h2>
+
+JSX will sanitise the data and avoids XSS injects
+{data} from an api will be sanitised

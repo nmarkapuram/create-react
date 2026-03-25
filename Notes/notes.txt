@@ -1,0 +1,48 @@
+Setup Git Keys
+
+1. Load React from CDN
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+2. React.createElement ->  Creates an object with tag, attributes, child
+    const ele = React.createElement("h1",{"id":"header","Text inside header"})
+3. ReactDOM.createRoot -> sets the root element
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+4. use render method of ReactDOM to convert createELement Object to dom
+    root.render(ele);
+5. CDN is not a good way of loading React
+
+6. Parcel
+    Dev Build
+    Local Server
+    Hot Module Replacement (HMR)
+    File Watching Algorithm - written in c++
+    Faster builds with caching
+    Image optiimization
+    Minification
+    Compressing
+    Bundling
+    Consistent Hashing
+    Code splitting
+    Differential Bundling - Support older browsers
+    Error Handling
+    Host Https
+    Tree Shaking
+    Different dev and prod builds
+
+JSX
+----
+7. You have to use camelCase for jsx attributes 
+    ex:- className, tabIndex, etc..
+8. Use paranthesis when code goes to multiple lines
+9. Babel transplies jsx to React
+    https://babeljs.io/
+    <h1 id="header">ddd</h1> -> transpiles to -> React.createElement()
+
+React Components
+10. Everything in react is a Components
+    1. Class based Components - OLD
+    2. Functional Components - New
+        Function returns a react element 
+Component Composition
+    Keeping multipke Components inside a single functional component

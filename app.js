@@ -1,7 +1,26 @@
-const heading = React.createElement('h1', {id: 'heading'}, 'Hello React from js');
-console.log(heading);
-    const root = ReactDOM.createRoot(document.getElementById('root'));
-    root.render(heading);
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 
-    
-    console.log(root);
+// React Element
+
+// const jsxHeading = <h1 id="heading" className="header">Hello React from js</h1>;
+// console.log(jsxHeading);
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(jsxHeading);
+
+
+// React Functional Component
+const HeadingComponent = function() {
+    return (
+        <h1 id="heading" className="header">Hello React from js</h1>
+    );
+}
+
+const HeadingComponent2 = () => (
+    <div className="container">
+        <h1 id="heading" className="header">Hello React from js 2</h1>
+        <HeadingComponent />
+    </div>
+);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<HeadingComponent2 />);

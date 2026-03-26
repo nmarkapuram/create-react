@@ -93,9 +93,21 @@ Whenever state variable chnages, react is re-rendering the component
 
 Virtual dom
 ===========
-Reconciliation Algorithm -> React Fiber
+Reconciliation Algorithm -> React Fiber (Introduced in React16 )
 React creates Virtual DOM (representation of actual dom) in a JS Object. 
 
+Diff Algorithm -> Compares 2 Vitual DOMs and updates 
 
 If data filtered to result in lesser number of cards, 
 
+
+useEffect -> Is a Function
+    useEffect(2 args)
+    useEffect(callbackFn, dependency)
+    useEffect(()=>{
+        console.log("dd");
+    }, [])
+    useEffect will be called when the component renders
+
+
+Shimmer UI -> Show fake layout till we get the data

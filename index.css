@@ -40,6 +40,15 @@
 }
 
 .filter-btn{
-    margin:10px;
     cursor: pointer;
+    margin-left: 50px;;
+}
+
+.shimmer-cards{
+    width: 200px;
+    border: 1px solid
+}
+
+.filter{
+    display: flex;
 }

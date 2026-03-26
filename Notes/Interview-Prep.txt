@@ -1,0 +1,63 @@
+First Architrecture - MVC
+    Dynamic , COmplex Login - props
+    Tightly coupled with backend, No scalability
+
+
+SPA - Angular, React, View
+    Rich, interactive, Scale better,  Performance more
+    complexity more, cost higher, team size more, Too much JS
+    
+
+Thick vs Thin CLient
+    Thick - Having more logic in Front end
+    Thin - Having more login on BE
+
+
+Backend for FrontEnd
+Web vs Mobile -> Have BFF (FE managing - GraphQL) -> BE API
+
+    Tight coupling. Single point of failure, 
+    Performance descreses as we added one more network hop
+    More learning
+
+SPAs biggest pain - Performance
+SSG/ISG/SSR
+Static site generation (initial web fast),
+Incremental static generation (Browser -> CDN -> Server) 
+Server Side Rendering (Pre rendered page)
+
+Next.js, Nuxt.js
+
+
+key COncept: Hydration
+
+Render server generated html
+Interactivity delayed
+
+RSC - React server Components
+Next.js
+
+SPA -> Server (Next.js) -> DB
+rehydrate
+
+
+Modular Frontend Monolith
+Boundaries 
+    Billing, Products, Shared UI & Logic
+
+    Classic architecture -> does not apply 
+        -> because the code should work when we change the frameworks
+        -> Most frameworks are opinioated
+    Hexogonal Architecture -> Does not apply
+
+cost
+long build time
+
+
+Micro frontends -> scalable, complexity high, Product value high
+
+Shell app (shared state, layout) -> BIlling, Products, 
+Shared UI & Logic, Shared Services (auth)
+independently deployable
+Enterprise app.
+

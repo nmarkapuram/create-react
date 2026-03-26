@@ -88,6 +88,9 @@ Hooks
 UseState() -> Super powerful state variable
 UseEffect()
 
+It is a utility function. 
+We can create custom hooks
+
 Whenever state variable chnages, react is re-rendering the component
 
 
@@ -111,3 +114,49 @@ useEffect -> Is a Function
 
 
 Shimmer UI -> Show fake layout till we get the data
+
+Routes & Hooks
+==============
+useEffect is called after every render is called.
+Dependency array will change the behavior
+if Dependency array is empty, useEffect is called on intial render and just once.
+if Dependency array is updated with a state variable, useEffect will be called
+
+useEffect(() => {}, [])
+
+
+Never use state variables outside the functional component.
+Call on top of the functional component
+
+Never create useState inside a conditional block, loops (if-else, for)
+
+Never use anchor tag for Routes
+Link from react-router-dom does the work
+
+
+# 2 types of routing in web apps
+Cliient Side routing
+Server Side routing
+
+Class Based Components order of execution
+constructor -> render -> componentDidMount
+
+In Parent -> child relation
+Parent Constructor -> Parent render -> child constructor -> Child render -> child component Did mount -> parent component Did mount
+
+componentDidMount is used to make API calls
+
+https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+DOM updats in single batch for all parent and child
+
+
+Custom Hooks
+============
+API calls
+Online/Offline 
+
+Add Chunking, Dynamic bundling, Code Splitting
+
+lazy, Suspense
+Load a route lazily but it might throw error before loading js File
+Use Suspense to avoid it and provide a fallback to show loading.

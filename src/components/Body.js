@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react" ;
 import Shimmer from "./Shimmer";
+import useOnlineStatus from "../utils/useOnlineStatus"
 
 const Body = () => {
     const [Restaurants, setRestaurants] = useState([]);
@@ -13,12 +14,19 @@ const Body = () => {
     },[]);
 
     const fetchData = async () => {
-        const data = await fetch("https://namastedev.com/api/v1/listRestaurants");
-        const json = await data.json();
+        // const data = await fetch("https://namastedev.com/api/v1/listRestaurants");
+        const api = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
+        // const json = await data.json();
+        const json = await api.json();
         console.log(json);
-        setRestaurants(json?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-        setFilteredRestaurants(json?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        const restaurantsObj = json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    
+        setRestaurants(restaurantsObj)
+        setFilteredRestaurants(restaurantsObj);
     }
+
+    const onlinestatus = useOnlineStatus();
+    if (!onlinestatus) return (<h1> You are offline</h1>);
 
     if(Restaurants.length ==0){
         return <Shimmer />

@@ -51,6 +51,7 @@ const Body = () => {
             className='border-1 p-2 m-2 rounded-lg'
             type='text'
             placeholder='Search'
+            data-testid="Search"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value)
@@ -89,7 +90,7 @@ const Body = () => {
         {filteredRestuarants.map((Restaurant) => (
             <Link to={"/restuarants/" + Restaurant?.info.id} key={Restaurant.info.id}>
             {
-                Restaurant?.info?.avgRating< 4 ? <RestaurantCard resData={Restaurant}></RestaurantCard> : <RestaurantCardPromoted key={Restaurant.info.id} resData={Restaurant}></RestaurantCardPromoted>
+                Restaurant?.info?.avgRating< 4.4 ? <RestaurantCard resData={Restaurant}></RestaurantCard> : <RestaurantCardPromoted key={Restaurant.info.id} resData={Restaurant}></RestaurantCardPromoted>
             }
             </Link>
         ))}

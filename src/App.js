@@ -10,6 +10,9 @@ import RestaurantMenu from './components/RestaurantMenu.js'
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 import RestaurantMenu from './components/RestaurantMenu.js'
 import UserContext from './utils/UserContext.js'
+import { Provider } from 'react-redux';
+import Cart from './components/Cart.js'
+import appStore from './utils/appStore.js'
 // import Grocery from "./components/Grocery.js";
 
 const Grocery = lazy(() => import('./components/Grocery.js'))
@@ -18,13 +21,15 @@ const AppLayout = () => {
 
   const[userName, setUserName] = useState("Nagaraja Markapurm");
   return (
-    <UserContext.Provider value={{loggedInUser: userName, setUserName}}>
-      <div className='app-layout'>
-        <Header />
-        <Outlet />
-        <Footer />
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{loggedInUser: userName, setUserName}}>
+        <div className='app-layout'>
+          <Header />
+          <Outlet />
+          <Footer />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   )
 }
 
@@ -44,6 +49,10 @@ const appRouter = createBrowserRouter([
       {
         path: '/contact',
         element: <Contact />,
+      },
+      {
+        path: '/cart',
+        element: <Cart />,
       },
       {
         path: '/grocery',

@@ -179,3 +179,45 @@ UserContext.Provider -> update context value
     You can set different value to haeder , body etc.. You need to wrap it above
 
 
+Redux
+======
+Cart flow example
+Architecure of Redus Toolkit
+
+redux is a big store that can be accessed across Components
+in redux slices can be created for each logically seperated data
+user slice, 
+
+we can directly modift/Add
+
+lifecycle
+Write action to store
+Trigger (clicking add btn) -> Dispatch action -> calls reducer function -> update slice in redux store
+
+Read action
+Slice -> Selector gives data to component
+The above is called Subscribing to the store. This makes it automaticlaly update when the redux slice data changes
+
+
+Add to cart example:
+Add button -> Disptach an action -> reducer is called -> updates redux slice
+Cart button -> subscribes to the data to get the count.
+
+While using useSlector -> subscribe to exact slice
+
+Redux internally uses Immer for mutation
+
+RTK Query
+
+
+Types of Testing a developer can do
+Unit Testing - Testing component in isolation
+Integration Testing - Component interaction.
+E2E testing - Landing on the application to all the flows - simulation of user behavior
+
+Libraries - React Testing Library -> On top of Dom Testing Library
+    -> Internally uses Jest
+
+
+Testing:
+it and test both are same

@@ -19,7 +19,9 @@
   "scripts": {
     "test": "jest",
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+  "format-check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
   "devDependencies": {
     "eslint-config-prettier": "^10.1.8",
@@ -28,9 +30,11 @@
     "prettier": "^3.8.1"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.2.2",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "react-router-dom": "^6.30.3"
+    "react-router-dom": "^6.30.3",
+    "tailwindcss": "^4.2.2"
   },
   "browserslist": [
     "last 2 versions"

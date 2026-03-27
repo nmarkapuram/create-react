@@ -1,39 +1,52 @@
-import {LOGO_URL} from "../utils/constants"
-import {useState} from "react";
-import { Link } from "react-router-dom";
+import { LOGO_URL } from '../utils/constants'
+import { useContext, useState } from 'react'
+import { Link } from 'react-router-dom'
+import UserContext from '../utils/UserContext';
 
 const Header = () => {
-    // let btnName = "Login"
+  // let btnName = "Login"
 
-    const [btnName, setbtnName] = useState("Login");
-    let count=0;
-    return (
-        <div className="header">
-            <div className="logo-container">
-                <img className='logo' src={LOGO_URL} alt="logo" />
-            </div>
-            <div className="nav-items">
-                <ul>
-                    <li>
-                        <Link to="./"> Home </Link> </li>
-                        <li>
-                        <Link to="./grocery"> Grocery </Link> </li>
-                    <li>
-                        <Link to="./about">About</Link></li>
-                    <li>
-                    <Link to="./contact">Contact</Link>
-                    </li>
-                    <li>Cart</li>
-                    <button className="login-btn" onClick={() => {
-                        setbtnName("Logout"); 
-                        count=1;
-                    }}> {btnName} {count}</button>
-                </ul>
-            </div>
-        </div>
-    );
-};
+  const {loggedInUser} = useContext(UserContext);
 
-<img className='logo' src={LOGO_URL} ></img>
+  const [btnName, setbtnName] = useState('Login')
+  let count = 0
+  return (
+    <div className='flex justify-between m-2 shadow-lg bg-pink-100 sm:bg-yellow-100 lg:bg-green-100'>
+      <div className='logo-container'>
+        <img className='w-32' src={LOGO_URL} alt='logo' />
+      </div>
+      <div className='flex items-center'>
+        <ul className='flex p-10'>
+          <li className='px-4'>
+            <Link to='./'> Home </Link>{' '}
+          </li>
+          <li className='px-4'>
+            <Link to='./grocery'> Grocery </Link>{' '}
+          </li>
+          <li className='px-4'>
+            <Link to='./about'>About</Link>
+          </li>
+          <li>
+            <Link to='./contact'>Contact</Link>
+          </li>
+          <li className='px-4'>Cart</li>
+          <li className='px-4'>{loggedInUser}</li>
+          <button
+            className='login-btn'
+            onClick={() => {
+              setbtnName('Logout')
+              count = 1
+            }}>
+            {' '}
+            {btnName}
+          </button>
 
-export default Header;
+        </ul>
+      </div>
+    </div>
+  )
+}
+
+;<img className='logo' src={LOGO_URL}></img>
+
+export default Header

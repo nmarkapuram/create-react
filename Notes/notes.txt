@@ -160,3 +160,22 @@ Add Chunking, Dynamic bundling, Code Splitting
 lazy, Suspense
 Load a route lazily but it might throw error before loading js File
 Use Suspense to avoid it and provide a fallback to show loading.
+
+
+Tailwind:
+========
+
+
+Higher Order Components
+Takes a component and returns a componenet by enhancing
+
+Props drilling -> Passing props to child of nth level. We need to pass to each child. It will not be scalable
+React Context is used for this
+React Context -> Anyone can consume it
+
+createContext -> create Context
+useContext -> Consume context globally
+UserContext.Provider -> update context value
+    You can set different value to haeder , body etc.. You need to wrap it above
+
+
